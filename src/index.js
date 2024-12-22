@@ -1,7 +1,6 @@
 import TelegramBot from 'node-telegram-bot-api';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
-import axios from 'axios';
 import { writeFile, unlink } from 'fs/promises';
 import ffmpeg from 'fluent-ffmpeg';
 import { promisify } from 'util';
@@ -49,15 +48,10 @@ bot.on('voice', async (msg) => {
     const filePath = file.file_path;
     const fileUrl = `https://api.telegram.org/file/bot${process.env.TELEGRAM_BOT_TOKEN}/${filePath}`;
 
-    // Download voice file
-    const response = await axios({
-      method: 'GET',
-      url: fileUrl,
-      responseType: 'arraybuffer'
-    });
-
-    // Save ogg file
-    await writeFile(oggFilePath, response.data);
+    // Download voice file using fetch instead of axios
+    const response = await fetch(fileUrl);
+    const arrayBuffer = await response.arrayBuffer();
+    await writeFile(oggFilePath, Buffer.from(arrayBuffer));
 
     // Convert ogg to mp3
     await ffmpegPromise(oggFilePath, mp3FilePath);
@@ -84,7 +78,6 @@ bot.on('voice', async (msg) => {
     });
 
     // Send results
-    //await bot.sendMessage(chatId, '📝 Transcription:\n' + transcription.text);
     await bot.sendMessage(chatId, '📋 Summary:\n' + summary.choices[0].message.content);
   } catch (error) {
     console.error('Error:', error);
