@@ -1,6 +1,9 @@
 # Voice Message Transcription and Summarization Bot
 
-A Telegram bot that transcribes voice messages and provides summaries using OpenAI's Whisper and GPT-4 models.
+A Telegram bot that transcribes voice messages and provides summaries using OpenAI's Whisper and GPT-4 models:
+
+![image](https://github.com/user-attachments/assets/cf896a5d-4be3-4742-a8aa-b74fa5845232)
+
 
 ## Features
 
@@ -111,3 +114,4 @@ If you encounter any issues:
 2. Verify that FFmpeg is properly installed and accessible from the command line
 3. Check that your OpenAI API key has sufficient credits
 4. Ensure your Telegram bot token is valid
+
