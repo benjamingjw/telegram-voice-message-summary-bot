@@ -1,4 +1,4 @@
-# Voice Message Transcription and Summarization Bot
+# Telegram Voice Message Transcription and Summarization Bot
 
 A Telegram bot that transcribes voice messages and provides summaries using OpenAI's Whisper and GPT-4 models:
 
