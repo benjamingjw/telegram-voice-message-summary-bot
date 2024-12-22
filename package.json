@@ -1,17 +1,13 @@
 {
-  "name": "telegram-voice-summary-bot",
-  "version": "1.0.0",
+  "name": "telegram-voice-bot",
   "type": "module",
-  "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
-  },
   "dependencies": {
-    "node-telegram-bot-api": "^0.61.0",
-    "openai": "^4.20.1",
-    "dotenv": "^16.3.1",
-    "axios": "^1.6.2",
-    "nodemon": "^3.0.2",
-    "fluent-ffmpeg": "^2.1.2"
+    "node-telegram-bot-api": "latest",
+    "openai": "latest",
+    "dotenv": "latest",
+    "fluent-ffmpeg": "latest"
+  },
+  "scripts": {
+    "start": "node src/index.js"
   }
 }
