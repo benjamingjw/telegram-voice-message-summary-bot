@@ -1,43 +1,120 @@
-# Telegram Voice Summary Bot
+# Voice Message Transcription and Summarization Bot
 
-This bot transcribes voice messages and provides summaries using OpenAI's Whisper and GPT-4.
+A Telegram bot that transcribes voice messages and provides summaries using OpenAI's Whisper and GPT-4 models.
 
-## Setup
+## Features
 
-1. Install dependencies:
+- Receives voice messages via Telegram
+- Converts .ogg audio files to .mp3 format
+- Transcribes audio using OpenAI's Whisper model
+- Summarizes transcriptions using GPT-4
+- Sends both transcription and summary back to the user
+
+## Prerequisites
+
+Before running this bot, make sure you have the following installed:
+- Node.js (v16 or higher)
+- npm (Node Package Manager)
+- FFmpeg
+
+### Installing FFmpeg
+
+#### Windows
+1. Download FFmpeg from the [official website](https://ffmpeg.org/download.html)
+2. Add FFmpeg to your system's PATH environment variable
+
+#### macOS
+```bash
+brew install ffmpeg
+```
+
+#### Linux (Ubuntu/Debian)
+```bash
+sudo apt update
+sudo apt install ffmpeg
+```
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone [your-repository-url]
+cd [repository-name]
+```
+
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-2. Configure environment variables:
-- Create a `.env` file
-- Add your API keys:
-  ```
-  TELEGRAM_BOT_TOKEN=your_telegram_bot_token
-  OPENAI_API_KEY=your_openai_api_key
-  ```
+3. Create a `.env` file in the root directory with the following variables:
+```
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token
+OPENAI_API_KEY=your_openai_api_key
+```
 
-3. Run the bot:
+## Setting up the Environment Variables
+
+1. Get a Telegram Bot Token:
+   - Message [@BotFather](https://t.me/botfather) on Telegram
+   - Create a new bot using the `/newbot` command
+   - Copy the provided token
+
+2. Get an OpenAI API Key:
+   - Sign up for an OpenAI account at [OpenAI's website](https://openai.com)
+   - Navigate to the API section
+   - Create a new API key
+   - Copy the key
+
+## Running the Bot
+
+1. Start the bot:
 ```bash
 npm start
 ```
 
-## Usage
+2. Send a voice message to your bot on Telegram
+3. The bot will process the message and reply with both a transcription and summary
 
-1. Start the bot by sending `/start`
-2. Send any voice message
-3. The bot will respond with:
-   - Transcription of your message
-   - A concise summary
+## Project Structure
 
-## Features
+```
+├── src/
+│   └── index.js
+├── .env
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
+```
 
-- Voice message transcription using OpenAI Whisper
-- Text summarization using GPT-4
-- Simple and intuitive interface
+## Dependencies
 
-## Requirements
+- node-telegram-bot-api
+- openai
+- dotenv
+- axios
+- fluent-ffmpeg
 
-- Node.js
-- Telegram Bot Token
-- OpenAI API Key
+## Contributing
+
+Feel free to submit issues and pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Error Handling
+
+If you encounter any issues:
+1. Make sure all environment variables are correctly set
+2. Verify that FFmpeg is properly installed and accessible from the command line
+3. Check that your OpenAI API key has sufficient credits
+4. Ensure your Telegram bot token is valid
+
+## Future Improvements
+
+- Add support for more audio formats
+- Implement language detection
+- Add conversation history
+- Add error retry mechanisms
