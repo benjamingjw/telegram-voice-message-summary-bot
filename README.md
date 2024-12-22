@@ -111,10 +111,3 @@ If you encounter any issues:
 2. Verify that FFmpeg is properly installed and accessible from the command line
 3. Check that your OpenAI API key has sufficient credits
 4. Ensure your Telegram bot token is valid
-
-## Future Improvements
-
-- Add support for more audio formats
-- Implement language detection
-- Add conversation history
-- Add error retry mechanisms
