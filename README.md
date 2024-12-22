@@ -79,24 +79,11 @@ npm start
 2. Send a voice message to your bot on Telegram
 3. The bot will process the message and reply with both a transcription and summary
 
-## Project Structure
-
-```
-├── src/
-│   └── index.js
-├── .env
-├── .gitignore
-├── package.json
-├── package-lock.json
-└── README.md
-```
-
 ## Dependencies
 
 - node-telegram-bot-api
 - openai
 - dotenv
-- axios
 - fluent-ffmpeg
 
 ## Contributing
