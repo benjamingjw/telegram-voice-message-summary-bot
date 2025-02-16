@@ -41,8 +41,8 @@ sudo apt install ffmpeg
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
-cd [repository-name]
+git clone https://github.com/benjamingjw/telegram-voice-message-summary-bot.git
+cd telegram-voice-message-summary-bot
 ```
 
 2. Install dependencies:
